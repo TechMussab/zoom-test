@@ -14,13 +14,15 @@ class Home extends Component {
 	handleChange = (e) => this.setState({ url: e.target.value })
 
 	join = () => {
-		let url = '172.20.1.93'
+		// let url = '172.20.1.93'
+		let url = ''
 		if (this.state.url !== "") {
 			 url = this.state.url.split("/")
 			window.location.href = `/${url[url.length-1]}`
 		} else {
-			 url += Math.random().toString(36).substring(2, 7)
-			window.location.href = `/${url}`
+			 url = Math.random().toString(36).substring(2, 7)
+			window.location.href = `https://172.20.1.93:3000/${url}`
+			// window.location.href = `localhost:3000/${url}`
 		}
 	}
 
